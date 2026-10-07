@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kepala yang Terlalu Ramai</title>
+<meta name="description" content="Buku gratis untuk anak muda yang sering berpikir terlalu jauh: cara menenangkan pikiran, selangkah demi selangkah.">
+<meta property="og:title" content="Kepala yang Terlalu Ramai">
+<meta property="og:description" content="Buku gratis untuk anak muda yang sering berpikir terlalu jauh: cara menenangkan pikiran, selangkah demi selangkah.">
+<meta property="og:type" content="book">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Konsep: kusut menjadi satu garis. Tiap bab kusutnya berkurang, sampai kepala terasa lebih lapang. */
+:root{
+  --bg:#ECEFF3;
+  --paper:#F7F8FA;
+  --ink:#151826;
+  --muted:#5B6479;
+  --accent:#2C4BFF;
+  --on-accent:#FFFFFF;
+  --rule:#D5DAE3;
+  --tint:#E1E6F2;
+  --font-display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Source Serif 4","Charter",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0E111C;--paper:#151A29;--ink:#E7EAF3;--muted:#9AA2B8;--accent:#8EA2FF;--on-accent:#0E111C;--rule:#262C3F;--tint:#1B2236;color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:19px;line-height:1.75;padding-inline:16px;padding-block:0}
+.bar{position:fixed;left:0;right:0;top:0;height:4px;z-index:5}
+.bar i{display:block;height:100%;width:0;background:var(--accent)}
+.wrap{max-width:680px;margin-inline:auto}
+header.cover{padding-block:64px 32px}
+.kicker{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(44px,12vw,84px);line-height:.98;letter-spacing:-.03em;margin:0 0 22px;text-wrap:balance}
+h1 span{display:block}
+h1 .big{color:var(--accent)}
+.sub{font-size:20px;color:var(--muted);margin:0 0 24px;max-width:32em}
+.tangle{display:block;width:100%;max-width:560px;height:auto;margin:6px 0 8px}
+.tangle path{fill:none;stroke:var(--ink);stroke-width:1.4;opacity:.5;stroke-linecap:round}
+.tangle .one{stroke:var(--accent);stroke-width:3;opacity:1}
+.tangle circle{fill:var(--accent)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.start,.resume{display:inline-block;padding:14px 24px;border-radius:8px;font-family:var(--font-display);font-weight:700;font-size:17px;text-decoration:none;line-height:1.2}
+.start{background:var(--accent);color:var(--on-accent)}
+.resume{border:2px solid var(--accent);color:var(--accent)}
+.start:hover,.resume:hover{filter:brightness(1.08)}
+nav.toc{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:24px 20px;margin-block:20px 56px}
+nav.toc h2{font-family:var(--font-display);font-size:14px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;color:var(--muted)}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+nav.toc a{display:grid;grid-template-columns:64px 1fr;gap:8px;padding:8px 6px;color:var(--ink);text-decoration:none;border-radius:6px;line-height:1.35}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--tint);outline:none}
+nav.toc .n{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--accent);padding-top:2px}
+section.bab{padding-block:48px 56px;scroll-margin-top:8px}
+.label{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.label span{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);white-space:nowrap}
+.wave-holder{flex:1;max-width:240px;display:block;min-width:0}
+.wave{width:100%;height:24px;display:block}
+.wave path{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round;opacity:.7}
+.wave circle{fill:var(--accent)}
+h2.jdl{font-family:var(--font-display);font-weight:800;font-size:clamp(30px,7vw,42px);line-height:1.08;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+.epi{font-style:italic;color:var(--muted);border-left:3px solid var(--accent);padding-left:16px;margin:0 0 32px}
+p{margin:0 0 1.15em}
+.pull{font-family:var(--font-display);font-weight:700;font-size:clamp(22px,4.8vw,28px);line-height:1.28;color:var(--accent);margin:1.8em 0;text-wrap:balance}
+h3{font-family:var(--font-display);font-weight:700;font-size:21px;line-height:1.25;margin:1.9em 0 .5em}
+ul,ol.num{margin:0 0 1.15em;padding-left:1.25em}
+li{margin-bottom:.55em}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1.6em 0}
+.duo>div{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px 18px 8px;min-width:0}
+.duo .alt{background:var(--tint)}
+.duo h4{font-family:var(--font-display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;color:var(--accent)}
+.duo ul{padding-left:1.1em;font-size:17px;line-height:1.55}
+.box{background:var(--tint);border-radius:10px;padding:22px 20px 8px;margin-top:2.2em}
+.box h4{font-family:var(--font-display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}
+.box h4+ul,.box h4+p{margin-top:0}
+.box ul{margin-bottom:14px}
+.box p{margin-bottom:1em}
+.care{border:2px solid var(--accent);border-radius:10px;padding:20px 20px 6px;margin:2em 0;background:var(--paper)}
+.care h4{font-family:var(--font-display);font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 10px;color:var(--accent)}
+.sign{font-family:var(--font-display);font-weight:700;color:var(--muted);margin-top:1.6em}
+.topback{display:inline-block;margin-bottom:20px;font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--accent);text-decoration:none}
+.topback:hover{text-decoration:underline}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:52px}
+.pager a{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink);text-decoration:none;font-family:var(--font-display);min-width:0}
+.pager a small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.pager a span{font-weight:700;font-size:17px;line-height:1.25}
+.pager a:hover{border-color:var(--accent)}
+.pager .prev{grid-column:1}
+.pager .next{grid-column:2;background:var(--accent);color:var(--on-accent);border-color:var(--accent);text-align:right}
+.pager .next small{color:inherit;opacity:.85}
+.pager .next:hover{filter:brightness(1.08)}
+.pager .solo{grid-column:1/-1}
+.js section.bab{display:none}
+.js section.bab.on{display:block}
+footer{padding-block:40px 80px;border-top:1px solid var(--rule);color:var(--muted);font-size:15px;line-height:1.6}
+footer p{margin-bottom:.8em}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (max-width:560px){.duo{grid-template-columns:1fr}}
+@media (max-width:480px){body{font-size:18px}nav.toc a{grid-template-columns:54px 1fr}.pager{grid-template-columns:1fr}.pager .prev,.pager .next{grid-column:1}.pager .next{order:-1}}
+</style>
+</head>
+<body>
+<div class="bar" aria-hidden="true"><i id="prog"></i></div>
+
+<div class="wrap">
+<header class="cover">
+  <p class="kicker">Buku gratis · catatan menenangkan pikiran</p>
+  <h1><span>Kepala yang</span><span>Terlalu</span><span class="big">Ramai</span></h1>
+  <p class="sub">Teman membaca untuk anak muda yang sering berpikir terlalu jauh, dan ingin belajar menenangkannya selangkah demi selangkah.</p>
+  <div id="coverTangle"></div>
+  <div class="btns">
+    <a class="start" href="#prolog">Mulai membaca dari Prolog →</a>
+    <a class="resume" id="resume" href="#prolog" hidden>Lanjutkan membaca</a>
+  </div>
+</header>
+
+<nav class="toc" id="daftar-isi" aria-label="Daftar isi">
+  <h2>Daftar Isi</h2>
+  <ol>
+    <li><a href="#prolog"><span class="n">PROLOG</span><span>Surat untuk Kamu yang Tak Bisa Diam di Dalam Kepala</span></a></li>
+    <li><a href="#bab-1"><span class="n">BAB 1</span><span>Kepala Kita Bukan Rusak, Hanya Terlalu Waspada</span></a></li>
+    <li><a href="#bab-2"><span class="n">BAB 2</span><span>Merenung atau Berputar-putar</span></a></li>
+    <li><a href="#bab-3"><span class="n">BAB 3</span><span>Kamar-Kamar Masa Lalu yang Tak Pernah Dikunci</span></a></li>
+    <li><a href="#bab-4"><span class="n">BAB 4</span><span>Badai yang Belum Tentu Datang</span></a></li>
+    <li><a href="#bab-5"><span class="n">BAB 5</span><span>Pikiran Bukan Fakta</span></a></li>
+    <li><a href="#bab-6"><span class="n">BAB 6</span><span>Menurunkan Isi Kepala ke Atas Kertas</span></a></li>
+    <li><a href="#bab-7"><span class="n">BAB 7</span><span>Tubuh yang Gaduh, Pikiran yang Gaduh</span></a></li>
+    <li><a href="#bab-8"><span class="n">BAB 8</span><span>Kebisingan dari Luar</span></a></li>
+    <li><a href="#bab-9"><span class="n">BAB 9</span><span>Takut Salah Langkah</span></a></li>
+    <li><a href="#bab-10"><span class="n">BAB 10</span><span>Menceritakan Isi Kepala</span></a></li>
+    <li><a href="#bab-11"><span class="n">BAB 11</span><span>Hidup Berdampingan dengan Keramaian</span></a></li>
+    <li><a href="#epilog"><span class="n">EPILOG</span><span>Surat dari Kepala yang Sudah Lebih Lapang</span></a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section class="bab" id="prolog">
+  <div class="label"><span>Prolog</span></div>
+  <h2 class="jdl">Surat untuk Kamu yang Tak Bisa Diam di Dalam Kepala</h2>
+  <p class="epi">Kalau kepalamu sering ramai, itu tidak berarti kamu lemah. Mungkin kamu hanya sedang memikul terlalu banyak hal sendirian.</p>
+  <p>Malam sudah larut. Lampu kamar sudah dimatikan, tubuhmu sudah rebah, tapi kepalamu justru baru mulai bekerja. Ia memutar ulang kalimat yang kamu ucapkan siang tadi. Ia menghitung ulang nilai, uang, umur, dan peluang. Ia membayangkan lima tahun lagi dengan seribu kemungkinan, dan hampir semuanya terdengar seperti ancaman.</p>
+  <p>Kalau itu terasa akrab, buku ini ditulis untukmu.</p>
+  <p>Aku tidak menulis sebagai orang yang kepalanya sudah sunyi. Aku menulis sebagai seseorang yang masih belajar menurunkan volume di dalam kepalanya, sedikit demi sedikit, dan ingin membagikan apa yang membantu.</p>
+  <p>Anak muda hari ini hidup di tengah banyak suara. Tugas dan ujian. Harapan keluarga. Pilihan jurusan dan pekerjaan. Layar yang tak pernah berhenti memperlihatkan hidup orang lain. Di antara semua itu, pikiran jarang diberi jeda. Wajar kalau lama-lama ia menjadi pasar yang tak pernah tutup.</p>
+  <p>Buku ini tidak menjanjikan kepala yang kosong. Kepala yang kosong tidak ada, dan itu bukan tujuan kita. Yang bisa kita latih adalah hubunganmu dengan keramaian itu: bagaimana mendengarkannya tanpa dikendalikan olehnya, bagaimana memilah mana yang perlu ditindaklanjuti dan mana yang cukup dibiarkan lewat.</p>
+  <p class="pull">Kita tidak sedang mencari kepala yang sepi. Kita sedang belajar menjadi tuan rumah yang tenang di tengah tamu yang ramai.</p>
+  <h3>Cara membaca buku ini</h3>
+  <p>Bacalah satu bab dalam satu waktu. Tidak perlu terburu-buru, dan tidak perlu berurutan kalau ada bab yang terasa paling kamu butuhkan. Siapkan buku catatan kecil. Di akhir setiap bab ada beberapa pertanyaan untuk direnungkan dan satu latihan yang tidak memakan waktu lebih dari sepuluh menit.</p>
+  <p>Satu catatan penting: buku ini adalah teman membaca, bukan pengganti psikolog, psikiater, atau tenaga kesehatan. Kalau bebanmu terasa terlalu berat, Bab 10 membahas kapan dan bagaimana mencari bantuan. Itu bukan tanda kamu gagal. Itu tanda kamu serius merawat dirimu.</p>
+  <p class="sign">Tarik napas dulu. Pelan. Kita mulai.</p>
+</section>
+
+<section class="bab" id="bab-1" data-n="1">
+  <div class="label"><span>Bab 1</span></div>
+  <h2 class="jdl">Kepala Kita Bukan Rusak, Hanya Terlalu Waspada</h2>
+  <p class="epi">Pikiran yang berisik sering kali adalah penjaga yang terlalu rajin, bukan musuh.</p>
+  <p>Bayangkan nenek moyang kita ribuan tahun lalu, berjalan di tepi hutan. Semak di sebelah kiri bergoyang. Bisa jadi itu angin. Bisa jadi itu harimau. Orang yang menganggapnya angin dan keliru tidak sempat mewariskan apa-apa. Orang yang menganggapnya bahaya dan keliru seratus kali, hanya rugi sedikit tenaga. Maka otak manusia dibentuk untuk lebih suka salah waspada daripada lengah sekali.</p>
+  <p>Mesin lama itu masih ada di kepala kita. Bedanya, harimau hari ini bentuknya lain: nilai ujian, pesan yang belum dibalas, omongan orang, ketakutan tidak punya masa depan. Tubuh tetap bereaksi seolah itu bahaya sungguhan. Jantung berdebar, perut mulas, tidur terganggu, pikiran berputar.</p>
+  <h3>Mengapa zaman ini membuat kepala lebih ramai</h3>
+  <ul>
+    <li><strong>Pilihan yang terlalu banyak.</strong> Dulu jalan hidup sedikit. Sekarang ada ratusan jurusan, ribuan pekerjaan, dan setiap pilihan terasa menentukan segalanya.</li>
+    <li><strong>Informasi yang tak ada habisnya.</strong> Otak tidak punya tombol "cukup" saat layar terus memberi bahan.</li>
+    <li><strong>Perbandingan setiap menit.</strong> Kita melihat sorotan terbaik hidup orang lain, lalu mengukurnya dengan isi kepala kita yang penuh keraguan.</li>
+    <li><strong>Jeda yang makin hilang.</strong> Antrean, perjalanan, dan waktu menunggu dulu membuat pikiran melamun. Sekarang semuanya terisi ponsel.</li>
+  </ul>
+  <h3>Berpikir banyak bukan tanda bodoh atau lemah</h3>
+  <p>Orang yang sering overthinking biasanya orang yang peduli. Ia ingin melakukan yang terbaik, tidak mau menyakiti orang lain, dan serius pada masa depannya. Itu kualitas yang baik. Masalahnya bukan pada berpikir. Masalahnya ada pada berpikir tanpa tujuan dan tanpa ujung.</p>
+  <p class="pull">Kepalamu tidak rusak. Ia hanya belum diajari kapan boleh berhenti berjaga.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kapan kepalamu paling ramai? Jam berapa, di mana, setelah melakukan apa?</li>
+      <li>Tiga hal apa yang paling sering berputar di sana?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p><strong>Peta keramaian.</strong> Setel waktu lima menit. Tulis semua yang sedang berputar di kepalamu tanpa disensor dan tanpa urutan. Setelah selesai, lingkari yang muncul berulang. Itulah tamu tetap di kepalamu, dan kita akan belajar menghadapinya satu per satu.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-2" data-n="2">
+  <div class="label"><span>Bab 2</span></div>
+  <h2 class="jdl">Merenung atau Berputar-putar</h2>
+  <p class="epi">Jalan yang baik membawamu ke suatu tempat. Lingkaran hanya membawamu kembali ke awal.</p>
+  <p>Tidak semua berpikir itu sama. Dari luar keduanya tampak serupa: kamu diam, keningmu berkerut, pikiranmu sibuk. Tapi di dalam, dua hal ini bekerja berbeda dan meninggalkan rasa yang berbeda.</p>
+  <div class="duo">
+    <div>
+      <h4>Merenung</h4>
+      <ul>
+        <li>Bertanya hal yang bisa dijawab</li>
+        <li>Menghasilkan pemahaman, rencana, atau keputusan</li>
+        <li>Membuatmu lebih jernih</li>
+        <li>Terasa selesai setelah ada langkah</li>
+      </ul>
+    </div>
+    <div class="alt">
+      <h4>Berputar-putar</h4>
+      <ul>
+        <li>Mengulang pertanyaan yang sama</li>
+        <li>Penuh "seandainya" dan "bagaimana kalau"</li>
+        <li>Membuatmu makin lelah dan cemas</li>
+        <li>Tidak pernah terasa selesai</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Tes satu pertanyaan</h3>
+  <p>Setiap kali kamu sadar pikiranmu sedang sibuk, tanyakan: <em>"Apa langkah berikutnya yang konkret?"</em></p>
+  <p>Kalau ada jawabannya, sekecil apa pun, itu merenung. Tulis langkahnya, lalu kerjakan atau jadwalkan. Kalau tidak ada jawabannya dan kamu hanya mengulang cerita yang sama, itu berputar. Dan berputar tidak akan pernah menemukan jawaban, karena memang ia tidak sedang mencari.</p>
+  <h3>Mengapa berputar terasa berguna</h3>
+  <p>Ini bagian yang licik. Memikirkan sesuatu berulang kali memberi rasa seolah kita sedang bekerja menyelesaikannya, seperti sedang bersiap. Padahal otak hanya memutar ulang rekaman. Rasanya seperti produktif, hasilnya nol, dan ongkosnya energi yang sebenarnya kamu butuhkan untuk hal lain.</p>
+  <h3>Cara memotong lingkaran</h3>
+  <ol class="num">
+    <li><strong>Sebut namanya.</strong> Katakan dalam hati, "Ah, aku sedang berputar." Sekadar mengenali sudah melonggarkan cengkeramannya.</li>
+    <li><strong>Pindahkan ke tubuh dan tangan.</strong> Cuci piring, rapikan meja, jalan keliling rumah, mandi. Aktivitas yang melibatkan gerak memberi otak tugas lain.</li>
+    <li><strong>Kembali dengan satu pertanyaan konkret.</strong> Setelah tenang, tanyakan sekali lagi: apa langkah berikutnya? Kalau tetap kosong, berarti saat ini memang tidak ada yang perlu dikerjakan, dan tidak apa-apa.</li>
+  </ol>
+  <p class="pull">Berhenti berputar bukan berarti berhenti peduli. Itu berarti memilih peduli dengan cara yang menghasilkan sesuatu.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Satu masalah yang sudah kamu pikirkan berulang kali, apakah sebenarnya kamu sudah tahu langkah berikutnya?</li>
+      <li>Aktivitas apa yang paling efektif memindahkan perhatianmu dari kepala ke tangan?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Pilih satu hal yang sedang berputar. Tulis di kertas: "Langkah berikutnya: ___". Kalau tidak ada, tulis "Tidak ada yang perlu kulakukan sekarang", lalu lipat kertasnya dan simpan.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-3" data-n="3">
+  <div class="label"><span>Bab 3</span></div>
+  <h2 class="jdl">Kamar-Kamar Masa Lalu yang Tak Pernah Dikunci</h2>
+  <p class="epi">Masa lalu boleh dikunjungi. Tinggal di sana yang membuat kita tersesat.</p>
+  <p>Ada kenangan yang datang tanpa diundang. Kata-kata yang keliru di depan banyak orang. Kesempatan yang terlewat. Keputusan yang kini terlihat jelas salahnya. Kejadian yang sudah bertahun-tahun lewat bisa muncul lagi pukul dua pagi, lengkap dengan rasa malunya yang masih segar.</p>
+  <p>Otak kita memang cenderung menyimpan peristiwa memalukan dengan label tebal. Itu bagian dari sistem waspada tadi: "ingat ini supaya tidak terulang." Masalahnya, sistem itu tidak tahu kapan tugasnya selesai.</p>
+  <h3>Pelajaran atau hukuman</h3>
+  <p>Ada dua cara mengunjungi masa lalu. Yang pertama untuk mengambil pelajaran: "Apa yang kupahami dari kejadian ini?" Kamu masuk, mengambil satu hal berguna, lalu keluar. Yang kedua untuk menghukum diri: memutar ulang adegannya, berkali-kali, sambil mengulang kata "bodoh" atau "memalukan". Cara kedua tidak mengubah apa pun di masa lalu, dan hanya merusak hari ini.</p>
+  <p>Kalau kamu sudah menemukan pelajarannya, tulis dalam satu kalimat. Itu tanda kunjunganmu selesai.</p>
+  <h3>Dirimu yang dulu tahu lebih sedikit</h3>
+  <p>Keputusan lama dibuat dengan pengetahuan, tenaga, dan keadaan pada saat itu. Menghakimi dirimu yang dulu dengan pengetahuan hari ini tidak adil. Itu seperti menyalahkan anak kecil karena belum pandai membaca. Ia sudah melakukan yang terbaik yang ia bisa dengan apa yang ia punya.</p>
+  <h3>Soal memaafkan</h3>
+  <p>Kalau ada orang yang perlu kamu minta maaf, lakukan, bila memang aman dan mungkin. Setelah itu, maafkan dirimu juga. Memaafkan bukan berarti membenarkan apa yang terjadi. Memaafkan berarti berhenti menagih utang yang tidak mungkin dibayar. Ia tidak menghapus pelajaran, hanya menghapus siksaannya.</p>
+  <p class="pull">Kamu boleh membawa pelajarannya. Kamu tidak harus membawa hukumannya.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kejadian mana yang paling sering kamu putar ulang?</li>
+      <li>Kalau sahabatmu mengalami hal yang sama, kalimat apa yang akan kamu ucapkan kepadanya? Bisakah kamu mengatakannya kepada dirimu sendiri?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p><strong>Surat untuk dirimu yang dulu.</strong> Tulis tiga kalimat: "Waktu itu kamu ___. Sekarang aku tahu ___. Aku memaafkanmu karena ___." Simpan atau sobek, terserah kamu. Yang penting ia sudah keluar dari kepala.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-4" data-n="4">
+  <div class="label"><span>Bab 4</span></div>
+  <h2 class="jdl">Badai yang Belum Tentu Datang</h2>
+  <p class="epi">Banyak ketakutan kita hanyalah hujan yang tidak pernah turun.</p>
+  <p>"Bagaimana kalau aku tidak lolos? Bagaimana kalau tidak ada yang mau menerimaku bekerja? Bagaimana kalau usahaku sepi? Bagaimana kalau ternyata aku salah jalan?" Kita membayangkan skenario terburuk dengan detail seperti sutradara film, lengkap dengan musik latar yang menegangkan.</p>
+  <p>Coba ingat kekhawatiran besarmu setahun lalu. Berapa yang benar-benar terjadi persis seperti bayanganmu? Dan untuk yang memang terjadi, bukankah kamu ternyata melewatinya, mungkin dengan cara yang tak pernah kamu bayangkan? Kita sering jauh lebih mampu menghadapi kenyataan daripada menghadapi bayangan tentang kenyataan.</p>
+  <h3>Tiga lingkaran kendali</h3>
+  <p>Gambarlah tiga lingkaran di kertasmu.</p>
+  <ul>
+    <li><strong>Lingkaran dalam: yang bisa kukendalikan.</strong> Usahaku, persiapanku, sikapku, caraku memperlakukan orang.</li>
+    <li><strong>Lingkaran tengah: yang bisa kupengaruhi.</strong> Nilaiku (lewat belajar), kesanku (lewat sikap), peluangku (lewat berusaha dan bertanya).</li>
+    <li><strong>Lingkaran luar: yang tidak bisa kukendalikan.</strong> Keputusan orang lain, ekonomi, persaingan, apa yang akan terjadi besok.</li>
+  </ul>
+  <p>Letakkan kekhawatiranmu di lingkaran yang sesuai. Lalu bagi energimu dengan adil: sebanyak mungkin untuk dua lingkaran pertama, sesedikit mungkin untuk yang terakhir. Mengkhawatirkan lingkaran luar itu seperti mendorong tembok dengan harapan ia bergeser.</p>
+  <h3>Rencana cadangan bukan ramalan buruk</h3>
+  <p>Menyiapkan cadangan itu bijak, asal dilakukan sekali dan ditulis. "Kalau A tidak terjadi, aku akan mencoba B." Setelah rencana cadangan tertulis, otak merasa ada jaring pengaman, dan tidak perlu menjaga skenario itu setiap malam.</p>
+  <h3>Tiga pertanyaan untuk setiap kecemasan</h3>
+  <ol class="num">
+    <li>Seberapa mungkin ini benar-benar terjadi? Jujur, jangan dilebihkan.</li>
+    <li>Kalau terjadi, apa yang akan kulakukan? Tuliskan langkahnya.</li>
+    <li>Apa satu hal yang bisa kulakukan hari ini untuk memperkecil kemungkinannya?</li>
+  </ol>
+  <p class="pull">Kecemasan menyuruhmu bersiap untuk seribu hal. Ketenangan membantumu memilih tiga yang benar-benar perlu.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kekhawatiran apa dari setahun lalu yang ternyata tidak terjadi?</li>
+      <li>Dari semua yang kamu cemaskan sekarang, berapa persen yang ada di lingkaran luar?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Gambar tiga lingkaran, taruh tiga kekhawatiranmu di dalamnya, lalu tulis satu tindakan kecil untuk kekhawatiran yang berada di lingkaran dalam atau tengah.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-5" data-n="5">
+  <div class="label"><span>Bab 5</span></div>
+  <h2 class="jdl">Pikiran Bukan Fakta</h2>
+  <p class="epi">Sebuah pikiran muncul bukan berarti ia benar. Ia hanya tamu yang mengetuk pintu.</p>
+  <p>Kalimat seperti "aku pasti gagal" terasa seperti kenyataan karena datang dalam suaramu sendiri. Ia muncul cepat, terdengar yakin, dan membawa perasaan yang kuat. Tapi pikiran adalah tafsiran, bukan laporan. Ia bisa benar, bisa keliru, dan sering kali sebagian dari keduanya.</p>
+  <h3>Jebakan pikiran yang akrab</h3>
+  <ul>
+    <li><strong>Membaca pikiran orang.</strong> "Dia tidak membalas, pasti dia marah padaku." Padahal mungkin ia sedang sibuk, lupa, atau kehabisan baterai.</li>
+    <li><strong>Membayangkan yang terburuk.</strong> "Nilaiku jelek, berarti masa depanku hancur."</li>
+    <li><strong>Berpikir hitam putih.</strong> "Kalau tidak sempurna, berarti gagal."</li>
+    <li><strong>Menyamakan perasaan dengan kenyataan.</strong> "Aku merasa bodoh, jadi aku bodoh."</li>
+    <li><strong>Semua salahku.</strong> "Acara itu kacau gara-gara aku," padahal banyak orang dan banyak faktor terlibat.</li>
+  </ul>
+  <p>Mengenali jebakan ini sudah separuh jalan. Begitu kamu bisa berkata, "Oh, ini aku sedang membaca pikiran orang," pikiran itu kehilangan sebagian kuasanya.</p>
+  <h3>Beri jarak dengan lima kata</h3>
+  <p>Ganti "Aku bodoh" menjadi "Aku sedang berpikir bahwa aku bodoh." Hanya lima kata tambahan, tapi jaraknya besar. Dengan kalimat kedua, kamu bukan lagi pikiran itu. Kamu adalah orang yang sedang mengamatinya lewat.</p>
+  <h3>Periksa seperti detektif</h3>
+  <ol class="num">
+    <li>Apa buktinya bahwa pikiran ini benar?</li>
+    <li>Apa buktinya yang menentangnya?</li>
+    <li>Adakah penjelasan lain yang masuk akal?</li>
+    <li>Kalau sahabatku berpikir begini tentang dirinya, apa yang akan kukatakan?</li>
+  </ol>
+  <p class="pull">Kamu bukan pikiranmu. Kamu adalah orang yang bisa melihat pikiran itu lewat.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Jebakan pikiran mana yang paling sering kamu alami?</li>
+      <li>Pikiran apa tentang dirimu yang selama ini kamu anggap fakta, padahal belum pernah kamu periksa?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Buat tiga kolom: <strong>Pikiran</strong>, <strong>Bukti yang mendukung</strong>, <strong>Bukti yang menentang</strong>. Isi dengan satu pikiran yang paling mengganggumu hari ini. Lihat apakah ia masih terasa sama kuatnya.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-6" data-n="6">
+  <div class="label"><span>Bab 6</span></div>
+  <h2 class="jdl">Menurunkan Isi Kepala ke Atas Kertas</h2>
+  <p class="epi">Kepala adalah tempat berpikir yang baik, tapi gudang yang buruk.</p>
+  <p>Pikiran yang hanya disimpan di kepala cenderung berputar, karena otak takut melupakannya. Ia mengulang-ulang supaya tidak hilang. Kalau kamu memberi pikiran itu tempat penyimpanan lain, otak boleh melepasnya. Kertas tidak lelah, tidak lupa, dan tidak panik.</p>
+  <h3>Kuras kepala, sepuluh menit</h3>
+  <ol class="num">
+    <li>Siapkan pena dan kertas, setel waktu sepuluh menit.</li>
+    <li>Tulis semuanya: kekhawatiran, tugas, rasa kesal, ide, hal yang lupa. Tanpa urutan, tanpa tata bahasa, tanpa sensor.</li>
+    <li>Saat waktu habis, berhenti. Baca sekilas.</li>
+    <li>Lingkari yang butuh tindakan. Coret yang hanya keluhan atau di luar kendalimu.</li>
+    <li>Untuk satu sampai tiga yang dilingkari, tulis langkah pertamanya.</li>
+  </ol>
+  <h3>Jam khawatir</h3>
+  <p>Kita tidak bisa melarang kekhawatiran datang. Tapi kita bisa memberinya jadwal. Pilih lima belas menit setiap hari (bukan menjelang tidur) sebagai jam khawatir. Kalau cemas muncul di luar jam itu, catat satu atau dua kata di kertas dan katakan, "Nanti, di jam khawatir."</p>
+  <p>Terdengar aneh, tapi banyak orang mendapati bahwa saat jam khawatir tiba, sebagian besar isinya sudah kehilangan tenaga. Dan untuk yang tersisa, kamu menghadapinya dengan kepala yang lebih jernih, bukan sambil makan atau mengerjakan tugas.</p>
+  <h3>Tiga baris sebelum tidur</h3>
+  <p>Setiap malam, tulis hanya tiga baris:</p>
+  <ul>
+    <li>Satu hal yang terjadi hari ini.</li>
+    <li>Satu hal yang kusyukuri.</li>
+    <li>Satu hal yang akan kukerjakan besok.</li>
+  </ul>
+  <p>Baris ketiga itu penting. Ia memberi tahu kepalamu bahwa besok sudah punya rencana, jadi malam ini boleh beristirahat.</p>
+  <p class="pull">Yang tertulis tidak lagi perlu dijaga oleh kepala.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Apa yang paling sering kamu takut lupakan, sehingga kepalamu terus mengulangnya?</li>
+      <li>Jam berapa waktu terbaik untuk jam khawatirmu?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Lakukan kuras kepala sepuluh menit sekarang. Setelah itu, rasakan sejenak: apakah ada ruang yang sedikit lebih lapang?</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-7" data-n="7">
+  <div class="label"><span>Bab 7</span></div>
+  <h2 class="jdl">Tubuh yang Gaduh, Pikiran yang Gaduh</h2>
+  <p class="epi">Sebelum menenangkan pikiran, kadang kita perlu menenangkan tubuh lebih dulu.</p>
+  <p>Pikiran dan tubuh adalah satu paket. Saat kurang tidur, masalah tampak lebih besar dan harapan tampak lebih kecil. Saat lapar, emosi lebih tajam. Saat seharian duduk menunduk, badan gelisah dan pikiran ikut gelisah. Memperdebatkan pikiranmu saat tubuhmu kewalahan itu seperti berusaha membaca di ruangan yang sedang bergoyang.</p>
+  <h3>Tidur, penjaga paling sunyi</h3>
+  <p>Kecemasan hampir selalu lebih keras saat kita lelah. Beberapa kebiasaan membantu:</p>
+  <ul>
+    <li>Tidur dan bangun di jam yang kurang lebih sama.</li>
+    <li>Jauhkan ponsel setidaknya tiga puluh menit sebelum tidur.</li>
+    <li>Kalau dua puluh menit tidak juga terlelap, bangun sebentar, duduk di tempat yang temaram, lakukan hal tenang seperti membaca, lalu kembali berbaring.</li>
+    <li>Jangan menilai hidupmu pukul dua pagi. Pada jam itu semuanya tampak lebih gelap dari kenyataan. Tunda keputusan sampai pagi.</li>
+  </ul>
+  <h3>Napas yang lebih panjang saat menghembus</h3>
+  <p>Tarik napas lewat hidung selama empat hitungan, lalu hembuskan pelan lewat mulut selama enam hitungan. Ulangi lima kali. Hembusan yang lebih panjang memberi sinyal kepada tubuh bahwa keadaan aman. Latih saat tenang, supaya mudah dipakai saat sedang ramai.</p>
+  <h3>Teknik lima, empat, tiga, dua, satu</h3>
+  <p>Saat pikiran menjauh ke mana-mana, tarik kembali ke saat ini. Sebut dalam hati: lima hal yang kamu lihat, empat yang bisa kamu sentuh, tiga yang kamu dengar, dua yang kamu cium, satu yang kamu rasakan. Perhatianmu berpindah dari kepala ke ruangan tempat kamu berada.</p>
+  <h3>Gerak, makan, dan minum</h3>
+  <p>Berjalan kaki lima belas sampai dua puluh menit sering lebih ampuh daripada berpikir satu jam. Makan teratur, minum air cukup, dan perhatikan kafein: kalau kopi atau minuman berenergi membuat jantungmu berdebar dan pikiranmu makin cemas, kurangi.</p>
+  <p>Kalau dada sering terasa sesak, jantung berdebar hebat, atau kamu sering panik tanpa sebab yang jelas, periksakan diri ke tenaga kesehatan. Itu bukan berlebihan, itu perawatan.</p>
+  <p class="pull">Kadang yang kamu butuhkan bukan jawaban yang lebih cerdas, melainkan tidur yang lebih panjang.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Apakah kepalamu lebih ramai di hari ketika tidurmu kurang atau makanmu tidak teratur?</li>
+      <li>Kebiasaan tubuh apa yang paling mudah kamu perbaiki minggu ini?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Lakukan lima putaran napas empat-enam sekarang. Malam nanti, taruh ponselmu di seberang ruangan tiga puluh menit sebelum tidur.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-8" data-n="8">
+  <div class="label"><span>Bab 8</span></div>
+  <h2 class="jdl">Kebisingan dari Luar</h2>
+  <p class="epi">Tidak semua keramaian di kepalamu berasal dari dalam. Sebagian kamu undang lewat layar.</p>
+  <p>Gulir tanpa henti. Berita yang buruk-buruk. Hidup orang lain yang tampak mulus. Opini yang saling berteriak. Notifikasi yang minta dibuka sekarang juga. Otak tidak punya cara membedakan mana yang penting dan mana yang sekadar lewat, sehingga semuanya masuk dan menunggu diproses.</p>
+  <p>Pikiranmu dibentuk oleh apa yang kamu beri makan. Kalau yang masuk kebisingan, jangan heran kalau yang keluar juga kebisingan.</p>
+  <h3>Periksa apa yang kamu konsumsi</h3>
+  <p>Luangkan lima menit untuk membuka akun-akun yang kamu ikuti. Tanyakan pada tiap akun: setelah melihatnya, aku merasa lebih tahu, lebih tenang, lebih bersemangat, atau justru lebih kurang dan lebih gelisah? Yang membuat gelisah, bisukan atau berhenti mengikuti. Tidak perlu merasa bersalah. Kamu tidak berutang perhatian kepada siapa pun. Isi berandamu dengan yang mengajarkan dan menenangkan.</p>
+  <h3>Rapikan notifikasi</h3>
+  <p>Matikan semua notifikasi yang tidak benar-benar mendesak. Tentukan sendiri jam mengecek pesan dan media sosial, bukan menunggu ponselmu yang menentukan. Cobalah satu jam pertama setelah bangun tanpa ponsel.</p>
+  <h3>Berita secukupnya</h3>
+  <p>Menjadi tahu itu penting. Menjadi tahu setiap menit itu tidak. Pilih dua waktu dalam sehari untuk mengecek kabar, lalu tutup. Dunia tetap berjalan, dan kamu tetap bisa berperan di dalamnya tanpa harus selalu menegang.</p>
+  <h3>Perbandingan di layar selalu curang</h3>
+  <p>Kamu membandingkan seluruh isi kepalamu yang penuh keraguan dengan sorotan terbaik hidup orang lain. Pertandingan itu sudah kalah sebelum dimulai. Kalau perbandingan memicu pikiran berputar, itu sinyal untuk menutup layar.</p>
+  <h3>Sepuluh menit hening</h3>
+  <p>Setiap hari, sediakan sepuluh menit tanpa layar, tanpa musik, tanpa bicara. Duduk di teras, di dekat jendela, atau berjalan sendirian. Awalnya terasa canggung, bahkan gelisah. Lama-lama terasa seperti membuka jendela di kamar yang pengap.</p>
+  <p class="pull">Kamu tidak harus menghadiri setiap keributan yang mengundangmu.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Aplikasi atau akun mana yang paling sering membuatmu merasa kurang?</li>
+      <li>Berapa jam sehari layar menguasai perhatianmu? Apakah itu sesuai dengan yang kamu inginkan?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Bisukan atau berhenti mengikuti tiga akun yang membuatmu gelisah. Matikan lima notifikasi yang tidak penting. Lalu duduklah sepuluh menit tanpa layar.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-9" data-n="9">
+  <div class="label"><span>Bab 9</span></div>
+  <h2 class="jdl">Takut Salah Langkah</h2>
+  <p class="epi">Orang yang menunggu langkah yang sempurna sering berakhir tidak melangkah sama sekali.</p>
+  <p>Bentuk overthinking yang paling mahal adalah lumpuh karena terlalu banyak pertimbangan. Memikirkan jurusan, memikirkan pilihan, memikirkan apa yang harus dimulai terlebih dahulu, sambil takut menyesal. Kita mengira dengan berpikir lebih lama, kita pasti memilih lebih benar. Padahal informasi yang paling kita butuhkan sering baru muncul setelah kita mulai bergerak.</p>
+  <h3>Pintu putar dan pintu kunci</h3>
+  <p>Ada keputusan yang seperti pintu putar: kalau tidak cocok, kamu bisa kembali dan mencoba yang lain. Ada keputusan yang seperti pintu terkunci: sulit atau mustahil dibalik. Kenyataannya, sebagian besar keputusan hidupmu adalah pintu putar. Mencoba kegiatan baru, mengikuti kursus, memilih tema proyek, bahkan banyak pilihan belajar dan karier awal. Beri waktu berpikir yang sedikit untuk pintu putar, dan waktu yang lebih panjang hanya untuk pintu kunci.</p>
+  <h3>Cukup baik itu sudah baik</h3>
+  <p>Mencari pilihan yang terbaik mutlak itu melelahkan dan hampir mustahil, sebab kamu tidak pernah bisa melihat semua kemungkinan. Cobalah cara ini: tulis tiga hal yang paling penting bagimu dalam keputusan itu. Pilih opsi yang memenuhi ketiganya. Selesai. Itu bukan malas, itu efisien.</p>
+  <h3>Pasang batas waktu berpikir</h3>
+  <ul>
+    <li>Keputusan kecil: sepuluh menit.</li>
+    <li>Keputusan sedang: tiga hari, dengan satu kali bertanya kepada orang yang dipercaya.</li>
+    <li>Keputusan besar: dua minggu, dengan catatan untung-rugi dan obrolan dengan orang yang berpengalaman.</li>
+  </ul>
+  <p>Saat batas waktu tiba, putuskan. Kalau perlu, tulis keputusanmu dan alasannya, supaya kamu tidak membukanya lagi tanpa alasan baru.</p>
+  <h3>Eksperimen kecil sebelum komitmen besar</h3>
+  <p>Ragu memilih bidang tertentu? Coba kelas singkat, ikut proyek kecil, ngobrol dengan orang yang sudah di bidang itu, atau tonton satu hari kerjanya. Data nyata hampir selalu lebih bermanfaat daripada bayangan di kepala.</p>
+  <h3>Menyesal itu mungkin, dan tidak apa-apa</h3>
+  <p>Keputusan apa pun bisa berujung penyesalan. Itu bukan alasan untuk tidak memutuskan. Yang bisa kamu kendalikan hanyalah memutuskan dengan sungguh-sungguh berdasarkan informasi yang ada saat itu. Selebihnya, kamu menyesuaikan di jalan.</p>
+  <p class="pull">Langkah yang cukup baik hari ini mengalahkan langkah sempurna yang tidak pernah diambil.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Keputusan apa yang sedang kamu tunda karena takut salah?</li>
+      <li>Apakah itu pintu putar atau pintu kunci?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Tulis keputusan itu, tiga kriteria terpenting, dan batas waktu berpikirmu. Lalu pikirkan satu eksperimen kecil yang bisa kamu lakukan minggu ini.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-10" data-n="10">
+  <div class="label"><span>Bab 10</span></div>
+  <h2 class="jdl">Menceritakan Isi Kepala</h2>
+  <p class="epi">Beban yang diceritakan sering mengecil. Beban yang dipendam sering membesar.</p>
+  <p>Banyak dari kita merasa harus kuat sendirian. Takut membebani orang lain. Takut dianggap lemah, dramatis, atau terlalu memikirkan hal sepele. Akhirnya semua disimpan sampai kepala penuh dan dada sesak.</p>
+  <p>Padahal bercerita sering kali melonggarkan lebih dari yang kamu kira. Begitu pikiran dijadikan kata-kata dan didengar orang lain, ia berubah bentuk. Yang tadinya kabut jadi tampak punya tepi. Dan kamu sadar kamu tidak sendirian.</p>
+  <h3>Siapa yang bisa diajak bicara</h3>
+  <p>Pilih orang yang mendengarkan tanpa buru-buru menghakimi: sahabat, kakak, orang tua, guru, pembina, pembimbing rohani, konselor sekolah atau kampus. Tidak harus semua. Satu orang yang tepat sudah sangat berarti.</p>
+  <h3>Cara memulai</h3>
+  <p>Kadang yang paling sulit adalah kalimat pertama. Kamu bisa memakai ini:</p>
+  <p><em>"Aku lagi banyak pikiran dan butuh didengar, bukan dinasihati dulu."</em></p>
+  <p>Kalimat itu menyelamatkan banyak obrolan, karena ia memberi tahu lawan bicaramu apa yang kamu perlukan.</p>
+  <h3>Kapan sebaiknya menemui tenaga profesional</h3>
+  <p>Merasa ramai kepala itu biasa. Tetapi pertimbangkan untuk bertemu psikolog, psikiater, atau tenaga kesehatan bila:</p>
+  <ul>
+    <li>keadaan ini berlangsung berminggu-minggu dan tidak membaik,</li>
+    <li>mengganggu tidur, makan, belajar, atau kegiatan sehari-hari,</li>
+    <li>kamu sering panik, sesak, atau jantung berdebar tanpa sebab yang jelas,</li>
+    <li>kamu merasa hampa terus-menerus dan kehilangan minat pada hal yang dulu kamu suka,</li>
+    <li>kamu makin menjauh dari orang-orang.</li>
+  </ul>
+  <p>Kamu bisa mulai dari puskesmas, konselor sekolah atau kampus, atau layanan psikologi di kotamu. Bantuan tidak perlu menunggu keadaan menjadi "cukup parah". Meminta bantuan bukan bukti kamu gagal, itu bukti kamu sedang merawat dirimu dengan serius.</p>
+  <div class="care">
+    <h4>Kalau malam ini terasa terlalu gelap</h4>
+    <p>Kalau muncul pikiran untuk menyakiti dirimu atau tidak ingin melanjutkan hidup, jangan hadapi sendirian, dan jangan tunggu besok. Beri tahu sekarang orang dewasa yang kamu percaya, yang bisa menemanimu saat ini juga.</p>
+    <p>Kamu juga bisa menghubungi layanan Healing119.id dari Kementerian Kesehatan: telepon <strong>119</strong>, lalu tekan <strong>ekstensi 8</strong>. Layanan ini buka 24 jam dan gratis. Kalau kamu dalam bahaya langsung, hubungi nomor darurat atau datang ke IGD terdekat.</p>
+    <p>Kamu berharga, dan rasa sakit yang sedang kamu rasakan layak mendapat pertolongan.</p>
+  </div>
+  <p class="pull">Meminta ditemani bukan kelemahan. Itu salah satu bentuk keberanian paling nyata.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Siapa orang yang paling membuatmu merasa didengar?</li>
+      <li>Apa yang selama ini kamu pendam karena takut dianggap berlebihan?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Tulis tiga nama orang yang bisa kamu hubungi saat kepalamu terlalu ramai. Lalu kirim satu pesan kepada salah satunya, boleh hanya: "Lagi ada waktu? Aku ingin cerita."</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-11" data-n="11">
+  <div class="label"><span>Bab 11</span></div>
+  <h2 class="jdl">Hidup Berdampingan dengan Keramaian</h2>
+  <p class="epi">Tujuannya bukan kepala yang sunyi. Tujuannya kepala yang bisa kamu ajak berdamai.</p>
+  <p>Ada hari-hari ketika kepalamu akan tetap ramai. Menjelang ujian, saat ada perubahan besar, ketika kamu sedang lelah atau kecewa. Itu manusiawi. Yang berubah setelah belajar, bukan hilangnya keramaian, melainkan caramu menghadapinya: kamu lebih cepat sadar, lebih tahu langkah, dan lebih lembut kepada dirimu sendiri.</p>
+  <h3>Paket tenang harian</h3>
+  <p>Kebiasaan kecil yang diulang jauh lebih kuat daripada tekad besar yang sesekali. Berikut paket yang bisa kamu mulai, totalnya kurang dari dua puluh menit:</p>
+  <ul>
+    <li><strong>Pagi:</strong> lima putaran napas empat-enam, lalu tulis satu prioritas hari ini.</li>
+    <li><strong>Siang:</strong> jeda lima menit tanpa layar, bergerak atau menatap jauh.</li>
+    <li><strong>Sore:</strong> jam khawatir lima belas menit, kalau kamu memerlukannya.</li>
+    <li><strong>Malam:</strong> tiga baris catatan dan ponsel dijauhkan dari tempat tidur.</li>
+  </ul>
+  <h3>Hari yang buruk bukan kemunduran</h3>
+  <p>Akan ada hari ketika semua latihan seolah hilang dan kepalamu kembali berisik. Jangan menyimpulkan bahwa semuanya gagal. Kemajuan bukan garis lurus, ia gelombang yang pelan-pelan naik. Cukup katakan, "Hari ini sedang ramai," lalu lakukan satu hal kecil yang menolong, dan lanjutkan hidup.</p>
+  <h3>Arahkan kekuatan berpikirmu</h3>
+  <p>Kepala yang sering penuh sering kali juga kepala yang peka, teliti, dan penuh daya cipta. Banyak karya, rencana, dan penemuan lahir dari kepala yang tidak bisa diam. Tugasmu bukan mematikannya, tapi memberinya jalan keluar yang sehat: menulis, merancang, belajar, memecahkan masalah, memahami orang lain.</p>
+  <h3>Bergerak dengan yakin secukupnya</h3>
+  <p>Masa depan tidak akan pernah sepenuhnya pasti, dan menunggu kepastian penuh berarti menunggu selamanya. Kamu tidak harus yakin seratus persen. Kamu hanya perlu yakin secukupnya untuk mengambil langkah berikutnya. Sisanya kamu pelajari sambil berjalan.</p>
+  <p class="pull">Kamu tidak perlu menenangkan semua suara. Kamu hanya perlu memilih mana yang kamu ikuti.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Dari semua yang kamu pelajari di buku ini, tiga hal mana yang paling menolongmu?</li>
+      <li>Kekuatan apa yang tersembunyi di balik kebiasaanmu berpikir dalam?</li>
+    </ul>
+    <h4>Latihan hari ini</h4>
+    <p>Susun <strong>paket tenang</strong> milikmu sendiri: tiga kebiasaan kecil yang akan kamu lakukan setiap hari. Tulis, tempel di tempat yang sering kamu lihat, dan mulai hari ini.</p>
+  </div>
+</section>
+
+<section class="bab" id="epilog">
+  <div class="label"><span>Epilog</span></div>
+  <h2 class="jdl">Surat dari Kepala yang Sudah Lebih Lapang</h2>
+  <p class="epi">Keramaiannya tidak hilang. Tapi kamu sekarang punya tempat untuk duduk di tengahnya.</p>
+  <p>Kepada kamu yang masih sering terjaga,</p>
+  <p>Aku menulis ini dari sisi lain dari malam-malam panjang itu. Bukan dari tempat yang sepenuhnya sunyi, sebab kepalaku masih sering ramai. Tapi dari tempat yang lebih lapang, tempat aku tahu apa yang harus dilakukan ketika keramaian itu datang.</p>
+  <p>Aku ingat betapa lelahnya berpikir sepanjang waktu. Betapa takutnya membayangkan masa depan yang kabur. Betapa sepinya merasa tidak ada yang mengerti. Dan aku ingin kamu tahu bahwa semua itu tidak membuatmu aneh. Itu membuatmu manusia yang sedang berusaha sungguh-sungguh.</p>
+  <p>Kamu sudah belajar mengenali kapan kamu berputar. Kamu sudah tahu kamu bukan pikiranmu. Kamu sudah punya kertas untuk menampung isi kepala, napas untuk menenangkan tubuh, dan orang-orang yang bisa kamu hubungi. Itu bekal yang tidak kecil.</p>
+  <p>Pada hari-hari ketika semuanya terasa kusut kembali, ingatlah bahwa kusut bukan akhir. Setiap kusut punya ujung. Tarik pelan satu helai, lalu helai berikutnya. Kamu tidak perlu mengurai semuanya hari ini.</p>
+  <p class="pull">Pelan-pelan, satu helai demi satu helai, kepalamu akan menemukan jalannya.</p>
+  <p>Terima kasih sudah membaca sampai di sini. Terima kasih sudah memilih untuk tidak menyerah pada kepalamu sendiri.</p>
+  <p class="sign">Dari kepala yang sudah lebih lapang.</p>
+</section>
+
+</main>
+
+<footer id="foot">
+  <p>Buku ini adalah teman membaca dan bukan pengganti bantuan psikolog, psikiater, atau tenaga kesehatan. Kalau kamu merasa kewalahan, ceritakan kepada orang yang kamu percaya dan cari bantuan profesional. Layanan Healing119.id (119 ekstensi 8) buka 24 jam dan gratis.</p>
+  <p>Boleh dibagikan kepada siapa pun yang membutuhkan.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var ids=['prolog','bab-1','bab-2','bab-3','bab-4','bab-5','bab-6','bab-7','bab-8','bab-9','bab-10','bab-11','epilog'];
+  var TOTAL=11;
+  var KEY='kepala-terlalu-ramai-terakhir';
+  var cur=-2; /* -1 = beranda */
+
+  function $(id){return document.getElementById(id);}
+  function safe(fn){try{fn();}catch(e){}}
+
+  /* Pengacak tetap supaya gambar selalu sama */
+  function rng(seed){var s=seed>>>0;return function(){s=(s*1664525+1013904223)>>>0;return s/4294967296;};}
+
+  /* ---------- Inti navigasi (tidak boleh gagal) ---------- */
+  var cover=document.querySelector('header.cover');
+  var toc=$('daftar-isi');
+  var foot=$('foot');
+  var resume=$('resume');
+  var prog=$('prog');
+  var tocLinks=toc.getElementsByTagName('a');
+
+  function nm(i){
+    var s=tocLinks[i].getElementsByTagName('span');
+    return {k:s[0].textContent,t:s[1].textContent};
+  }
+  function lab(k){return k.charAt(0)+k.slice(1).toLowerCase();}
+  function saved(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function save(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+
+  function updProg(){
+    safe(function(){
+      var h=document.documentElement.scrollHeight-window.innerHeight;
+      var y=window.pageYOffset||document.documentElement.scrollTop||0;
+      prog.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+    });
+  }
+
+  function show(idx){
+    cur=idx;
+    var q;
+    for(q=0;q<ids.length;q++){
+      var el=$(ids[q]);
+      if(q===idx){if((' '+el.className+' ').indexOf(' on ')<0){el.className+=' on';}}
+      else{el.className=(' '+el.className+' ').replace(' on ',' ').replace(/^\s+|\s+$/g,'');}
+    }
+    var home=idx<0;
+    cover.hidden=!home;
+    toc.hidden=!home;
+    foot.hidden=!(home||idx===ids.length-1);
+    if(idx>=0){save(ids[idx]);}
+    safe(function(){
+      var last=saved(),li=ids.indexOf(last);
+      if(home&&li>0){
+        resume.hidden=false;
+        resume.setAttribute('href','#'+last);
+        resume.textContent='Lanjutkan: '+lab(nm(li).k);
+      }else{resume.hidden=true;}
+    });
+    safe(function(){window.scrollTo(0,0);});
+    updProg();
+  }
+
+  function setHash(v){safe(function(){if(location.hash.replace('#','')!==v){location.hash=v;}});}
+
+  function go(id){
+    var i=ids.indexOf(id);
+    if(i<0){show(-1);setHash('');return;}
+    show(i);setHash(id);
+  }
+
+  /* Satu pendengar klik untuk semua tautan "#...": tidak bergantung pada alamat halaman */
+  document.addEventListener('click',function(e){
+    var a=e.target;
+    while(a&&a.nodeName!=='A'){a=a.parentNode;}
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href||href.charAt(0)!=='#')return;
+    e.preventDefault();
+    var id=href.substring(1);
+    if(id===''||id==='daftar-isi'){show(-1);setHash('');}
+    else{go(id);}
+  },false);
+
+  window.addEventListener('hashchange',function(){
+    var i=ids.indexOf(location.hash.replace('#',''));
+    if(i!==cur){show(i);}
+  },false);
+  window.addEventListener('scroll',updProg,false);
+  window.addEventListener('resize',updProg,false);
+  document.addEventListener('keydown',function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;
+    if(cur<0)return;
+    var k=e.key||e.keyCode;
+    if((k==='ArrowRight'||k===39)&&cur<ids.length-1){go(ids[cur+1]);}
+    if((k==='ArrowLeft'||k===37)&&cur>0){go(ids[cur-1]);}
+  },false);
+
+  /* Link kembali dan tombol lanjut di tiap bab */
+  var j;
+  for(j=0;j<ids.length;j++){
+    (function(j){
+      var s=$(ids[j]);
+      var back=document.createElement('a');
+      back.className='topback';back.setAttribute('href','#daftar-isi');back.textContent='← Daftar Isi';
+      s.insertBefore(back,s.firstChild);
+      var pg=document.createElement('div');pg.className='pager';
+      var h='';
+      if(j>0){var pv=nm(j-1);h+='<a class="prev" href="#'+ids[j-1]+'"><small>← '+lab(pv.k)+' sebelumnya</small><span>'+pv.t+'</span></a>';}
+      if(j<ids.length-1){var nx=nm(j+1);h+='<a class="next'+(j===0?' solo':'')+'" href="#'+ids[j+1]+'"><small>Lanjut ke '+lab(nx.k)+' →</small><span>'+nx.t+'</span></a>';}
+      else{h+='<a class="next" href="#daftar-isi"><small>Selesai</small><span>Kembali ke Daftar Isi</span></a>';}
+      pg.innerHTML=h;
+      s.appendChild(pg);
+    })(j);
+  }
+
+  /* ---------- Dekorasi (kalau gagal, navigasi tetap jalan) ---------- */
+  safe(function(){
+    var r=rng(7),out='',k,t,pts,i,N=260;
+    for(k=0;k<11;k++){
+      var a=1+Math.floor(r()*4),b=2+Math.floor(r()*5),c=1+Math.floor(r()*4),d=2+Math.floor(r()*5);
+      var p=r()*6.28,q=r()*6.28,u=r()*6.28,v=r()*6.28;
+      var A=70+r()*60,B=40+r()*45,cx=170+r()*40,cy=90+r()*14;
+      pts='';
+      for(i=0;i<=N;i++){
+        t=i/N*6.2832;
+        var x=cx+A*(Math.sin(a*t+p)+.45*Math.sin(b*t+q));
+        var y=cy+B*(Math.cos(c*t+u)+.45*Math.cos(d*t+v));
+        pts+=(i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
+      }
+      out+='<path d="'+pts+'"/>';
+    }
+    out+='<path class="one" d="M200 96 C 250 96 260 110 300 110 L 520 110"/><circle cx="526" cy="110" r="7"/>';
+    $('coverTangle').innerHTML='<svg class="tangle" viewBox="0 0 560 200" aria-hidden="true">'+out+'</svg>';
+  });
+
+  function waveSVG(n){
+    var r=rng(n*31+5),W=240,H=24,mid=H/2,steps=48,amp=(1-(n-1)/(TOTAL-1))*10+(n>=TOTAL?0:1.2);
+    var d='',i;
+    for(i=0;i<=steps;i++){
+      var x=i/steps*(W-10);
+      var y=mid+(r()*2-1)*amp*(i%2?1:.6);
+      d+=(i?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);
+    }
+    return '<svg class="wave" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true"><path d="'+d+'"/><circle cx="'+(W-6)+'" cy="'+mid+'" r="3.2"/></svg>';
+  }
+  for(j=0;j<ids.length;j++){
+    (function(j){
+      safe(function(){
+        var s=$(ids[j]),l=s.querySelector('.label');
+        var n=s.getAttribute('data-n');
+        var ni=n?parseInt(n,10):(ids[j]==='prolog'?1:TOTAL);
+        var holder=document.createElement('span');
+        holder.className='wave-holder';
+        holder.innerHTML=waveSVG(Math.max(1,Math.min(TOTAL,ni)));
+        l.appendChild(holder);
+      });
+    })(j);
+  }
+
+  /* ---------- Mulai ---------- */
+  document.documentElement.className+=' js';
+  var start=ids.indexOf(location.hash.replace('#',''));
+  show(start);
+})();
+</script>
+</body>
+</html>
